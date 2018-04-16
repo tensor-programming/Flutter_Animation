@@ -51,9 +51,9 @@ class LogoAnimation extends AnimatedWidget {
   Widget build(BuildContext context) {
     Animation animation = listenable;
     return FadeTransition(
-      opacity: animation, //changes Opacity of the Logo
+      opacity: animation.value, //changes Opacity of the Logo
       child: Container(
-        height: 400.0,
+        height: 400.0, //static height and width, change to animation.value to make it move. 
         width: 400.0,
         child: FlutterLogo(),
       ),
