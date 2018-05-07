@@ -53,7 +53,7 @@ class LogoAnimation extends AnimatedWidget {
     return Center(
       child: Container(
         height: animation
-            .value, //static height and width, change to animation.value to make it move.
+            .value, 
         width: animation.value,
         child: FlutterLogo(),
       ),
