@@ -18,7 +18,7 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     animationController = AnimationController(
         duration: Duration(milliseconds: 2000), vsync: this);
 
-    animation = Tween(begin: 0.0, end: 1000.0).animate(animationController);
+    animation = Tween(begin: 0.0, end: 400.0).animate(animationController);
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         animationController.reverse();
@@ -50,11 +50,11 @@ class LogoAnimation extends AnimatedWidget {
   @override
   Widget build(BuildContext context) {
     Animation animation = listenable;
-    return FadeTransition(
-      opacity: animation.value, //changes Opacity of the Logo
+    return Center(
       child: Container(
-        height: 400.0, //static height and width, change to animation.value to make it move. 
-        width: 400.0,
+        height: animation
+            .value, //static height and width, change to animation.value to make it move.
+        width: animation.value,
         child: FlutterLogo(),
       ),
     );
